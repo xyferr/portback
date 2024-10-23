@@ -138,6 +138,7 @@ CORS_ALLOWED_ORIGINS = [
     
     # 'http://127.0.0.1:5500',  # Your local frontend
     # 'http://localhost:5500',   # Sometimes localhost uses this
-    'https://rohit-portfolio1.netlify.app',  # Your production frontend
+    'https://rohit-portfolio1.netlify.app',
+    'https://xyfer.me/',# Your production frontend
 ]
 
