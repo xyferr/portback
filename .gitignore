@@ -1,0 +1,5 @@
+myenv
+*.env
+bin/
+lib/
+*.sqlite3
