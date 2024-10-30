@@ -2,9 +2,10 @@ from django.shortcuts import render
 from .serializers import MessagesSerializer
 from rest_framework.response import Response
 from .models import Messages
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.views import APIView
 from django.http import HttpResponse
+from rest_framework.permissions import IsAuthenticated
 
 from django.contrib import messages
 from django.core.mail import EmailMessage
@@ -12,6 +13,7 @@ from django.core.mail import EmailMessage
 # Create your views here.
 
 @api_view()
+@permission_classes([IsAuthenticated])
 def get_messages(request):
     list = Messages.objects.all()
     serializer = MessagesSerializer(list,many=True)
