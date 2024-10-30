@@ -14,6 +14,17 @@ from pathlib import Path
 import os
 import dj_database_url
 from decouple import config
+from dotenv import load_dotenv
+
+load_dotenv()
+
+#email stuff
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST =os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER =os.getenv('EMAIL_HOST_USER')
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD =os.getenv('EMAIL_HOST_PASSWORD')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -139,6 +150,6 @@ CORS_ALLOWED_ORIGINS = [
     # 'http://127.0.0.1:5500',  # Your local frontend
     # 'http://localhost:5500',   # Sometimes localhost uses this
     'https://rohit-portfolio1.netlify.app',
-    'https://xyfer.me/',# Your production frontend
+    'https://xyfer.me',# Your production frontend
 ]
 
