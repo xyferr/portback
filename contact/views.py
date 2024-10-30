@@ -19,7 +19,8 @@ def get_messages(request):
     serializer = MessagesSerializer(list,many=True)
     return Response(
         {
-            'data':serializer.data
+            # 'data':serializer.data
+            'data':'Hello Rohit'
         }
     )
     
