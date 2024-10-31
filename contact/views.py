@@ -54,7 +54,7 @@ class MessageAPI(APIView):
             email = EmailMessage(
                 email_subject,
                 email_body,
-                "ROHIT <star080war@gmail.com>",,
+                "ROHIT <star080war@gmail.com>",
                 [email_from_customer],
             )
             email.send(fail_silently=False)
